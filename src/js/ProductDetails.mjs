@@ -1,0 +1,34 @@
+import { qs, getLocalStorage, setLocalStorage } from './utils.mjs';
+
+export default class ProductDetails {
+  constructor(productId, dataSource) {
+    this.productId = productId;
+    this.product = {};
+    this.dataSource = dataSource;
+  }
+  async init() {
+    document
+      .getElementById('addToCart')
+      .addEventListener('click', this.addProductToCart.bind(this));
+
+    this.product = await this.dataSource.findProductById(this.productId);
+
+    this.renderProductDetails();
+  }
+  addProductToCart() {
+    const cart = getLocalStorage('so-cart') || [];
+    cart.push(this.product);
+    setLocalStorage('so-cart', cart);
+  }
+  renderProductDetails() {
+    qs('title').innerText = `Sleep Outside | ${this.product.Name}`;
+    qs('h3').innerText = this.product.Brand.Name;
+    qs('h2').innerText = this.product.NameWithoutBrand;
+    qs('#tent-img').src = this.product.Image;
+    qs('#tent-img').alt = this.product.Name;
+    qs('.product-card__price').innerText = `$${this.product.ListPrice}`;
+    qs('.product__color').innerText = this.product.Colors.ColorName;
+    qs('.product__description').innerHTML = this.product.DescriptionHtmlSimple;
+    qs('#addToCart').setAttribute('data-id', this.productId);
+  }
+}
