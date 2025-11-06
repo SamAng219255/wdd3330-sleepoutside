@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": ["*.js", "src/**/*.js"],
+      "files": ["*.js", "src/**/*.{mjs,js}"],
       "options": {
         "singleQuote": true
       }
