@@ -8,7 +8,8 @@
     "build": "vite build --emptyOutDir",
     "lint": "eslint *.js src/**/*.{mjs,js}",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,mjs,js,ts,css}\"",
-    "test": "jest"
+    "test": "jest",
+    "preview": "vite preview"
   },
   "author": "Shane Thompson",
   "license": "ISC",
