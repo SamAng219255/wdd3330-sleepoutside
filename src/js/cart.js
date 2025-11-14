@@ -6,17 +6,18 @@ function renderCartContents() {
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
 
-  document.querySelectorAll(".cart-card__close")
-    .forEach(
-      btn => btn.addEventListener(
-        "click",
-        e => removeFromCart(btn.dataset.id)
-      )
+  document
+    .querySelectorAll('.cart-card__close')
+    .forEach((btn) =>
+      btn.addEventListener('click', (e) => removeFromCart(btn.dataset.id)),
     );
 }
 
 function removeFromCart(id) {
-  cartItems.splice(cartItems.findIndex(item => item.Id == id), 1);
+  cartItems.splice(
+    cartItems.findIndex((item) => item.Id == id),
+    1,
+  );
   setLocalStorage('so-cart', cartItems);
 
   renderCartContents();
