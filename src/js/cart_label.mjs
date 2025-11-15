@@ -1,21 +1,21 @@
 import { getLocalStorage, qs } from './utils.mjs';
 
 export default function setCartLabel(value) {
-	let count = value;
-	
-	if(count == undefined) {
-		count = (getLocalStorage('so-cart') || []).length;
-	}
+  let count = value;
 
-	const cartLabel = qs('.cart span');
+  if (count == undefined) {
+    count = (getLocalStorage('so-cart') || []).length;
+  }
 
-	cartLabel.innerText = count;
+  const cartLabel = qs('.cart span');
 
-	if(count <= 0) cartLabel.classList.remove('show');
-	else cartLabel.classList.add('show');
+  cartLabel.innerText = count;
+
+  if (count <= 0) cartLabel.classList.remove('show');
+  else cartLabel.classList.add('show');
 }
 
 window.addEventListener('storage', (event) => {
-	if(event.storageArea === localStorage && event.key == 'so-cart')
-		setCartLabel();
+  if (event.storageArea === localStorage && event.key == 'so-cart')
+    setCartLabel();
 });

@@ -28,7 +28,13 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 // renders a list with a given template function
-export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
-  if(clear) parentElement.innerHTML = '';
+export function renderListWithTemplate(
+  templateFn,
+  parentElement,
+  list,
+  position = 'afterbegin',
+  clear = false,
+) {
+  if (clear) parentElement.innerHTML = '';
   parentElement.insertAdjacentHTML(position, list.map(templateFn).join('\n'));
 }

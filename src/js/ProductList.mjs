@@ -1,7 +1,6 @@
 import { renderListWithTemplate } from './utils.mjs';
 
 function productCardTemplate(product) {
-  console.log("Checkpoint");
   return `<li class="product-card">
     <a href="product_pages/?product=${product.Id}">
       <img src="${product.Image}" alt="Image of ${product.Name}">
@@ -9,7 +8,7 @@ function productCardTemplate(product) {
       <h3 class="card__name">${product.NameWithoutBrand}</h3>
       <p class="product-card__price">$${product.ListPrice}</p>
     </a>
-  </li>`
+  </li>`;
 }
 
 export default class ProductList {
