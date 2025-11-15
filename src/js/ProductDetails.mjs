@@ -24,7 +24,7 @@ export default class ProductDetails {
     qs('title').innerText = `Sleep Outside | ${this.product.Name}`;
     qs('h3').innerText = this.product.Brand.Name;
     qs('h2').innerText = this.product.NameWithoutBrand;
-    qs('#tent-img').src = this.product.Image;
+    qs('#tent-img').src = this.product.Images.PrimaryLarge;
     qs('#tent-img').alt = this.product.Name;
     qs('.product-card__price').innerText = `$${this.product.ListPrice}`;
     qs('.product__color').innerText = this.product.Colors.ColorName;

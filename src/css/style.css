@@ -255,6 +255,25 @@ button {
   align-self: start;
 }
 
+#product-list-links {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+#product-list-links a {
+  display: block;
+  text-decoration: none;
+  color: var(--dark-grey);
+  text-align: center;
+}
+#product-list-links svg {
+  display: block;
+  width: 66px;
+  height: auto;
+  margin: auto;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

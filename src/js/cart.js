@@ -9,7 +9,7 @@ function renderCartContents() {
   document
     .querySelectorAll('.cart-card__close')
     .forEach((btn) =>
-      btn.addEventListener('click', (e) => removeFromCart(btn.dataset.id)),
+      btn.addEventListener('click', () => removeFromCart(btn.dataset.id)),
     );
 }
 
