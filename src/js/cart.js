@@ -1,4 +1,5 @@
 import { getLocalStorage, setLocalStorage } from './utils.mjs';
+import setCartLabel from './cart_label.mjs';
 
 const cartItems = getLocalStorage('so-cart') || [];
 
@@ -21,6 +22,7 @@ function removeFromCart(id) {
   setLocalStorage('so-cart', cartItems);
 
   renderCartContents();
+  setCartLabel(cartItems.length);
 }
 
 function cartItemTemplate(item) {

@@ -1,4 +1,5 @@
 import { qs, getLocalStorage, setLocalStorage } from './utils.mjs';
+import setCartLabel from './cart_label.mjs';
 
 export default class ProductDetails {
   constructor(productId, dataSource) {
@@ -19,6 +20,7 @@ export default class ProductDetails {
     const cart = getLocalStorage('so-cart') || [];
     cart.push(this.product);
     setLocalStorage('so-cart', cart);
+    setCartLabel(cart.length);
   }
   renderProductDetails() {
     qs('title').innerText = `Sleep Outside | ${this.product.Name}`;
