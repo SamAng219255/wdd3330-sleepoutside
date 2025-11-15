@@ -2,6 +2,17 @@ import { getLocalStorage, setLocalStorage, qs, loadHeaderFooter } from './utils.
 import setCartLabel from './cart_label.mjs';
 import ShoppingCart from './ShoppingCart.mjs';
 
+const cartItems = getLocalStorage('so-cart') || [];
+const cartElem = qs('.product-list');
+
+const cart = new ShoppingCart(cartItems, cartElem, () => document
+  .querySelectorAll('.cart-card__close')
+  .forEach((btn) =>
+    btn.addEventListener('click', () => removeFromCart(btn.dataset.id)),
+  )
+);
+cart.renderList();
+
 function removeFromCart(id) {
   cartItems.splice(
     cartItems.findIndex((item) => item.Id == id),
@@ -9,20 +20,8 @@ function removeFromCart(id) {
   );
   setLocalStorage('so-cart', cartItems);
 
-  renderCartContents();
+  cart.renderList();
   setCartLabel(cartItems.length);
 }
-
-const cartItems = getLocalStorage('so-cart') || [];
-const cartElem = qs('.product-list');
-
-const cart = new ShoppingCart(cartItems, cartElem);
-cart.init();
-
-document
-  .querySelectorAll('.cart-card__close')
-  .forEach((btn) =>
-    btn.addEventListener('click', () => removeFromCart(btn.dataset.id)),
-  );
 
 loadHeaderFooter();

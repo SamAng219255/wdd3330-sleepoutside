@@ -21,15 +21,13 @@ function cartItemTemplate(item) {
 }
 
 export default class ShoppingCart {
-  constructor(cartItems, listElement) {
+  constructor(cartItems, listElement, callbackFn) {
     this.cartItems = cartItems;
     this.listElement = listElement;
+    this.callbackFn = callbackFn;
   }
-  async init() {
-    const list = await this.cartItems;
-    this.renderList(list);
-  }
-  renderList(list) {
-    renderListWithTemplate(cartItemTemplate, this.listElement, list);
+  renderList() {
+    renderListWithTemplate(cartItemTemplate, this.listElement, this.cartItems, 'afterbegin', true);
+    this.callbackFn();
   }
 }
