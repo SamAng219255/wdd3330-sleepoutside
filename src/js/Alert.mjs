@@ -10,7 +10,7 @@ export default class Alert {
                 throw new Error(`Failed to fetch alerts: ${response.status}`)
             }
             const alerts = await response.json();
-            console.log(alerts + "alert")
+            // console.log(alerts + 'alert')
 
             return alerts;
         } catch (error) {
