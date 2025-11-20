@@ -33,8 +33,6 @@ export default class Alert {
     }
 
     async displayAlerts() {
-        debugger
-        // window.alert('hello world')
 
         const alerts = await this.fetchAlerts();
 
