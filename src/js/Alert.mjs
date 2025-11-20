@@ -22,7 +22,7 @@ export default class Alert {
     createAlertElement(alert) {
         const p = document.createElement('p');
         p.textContent = alert.message;
-        p.style.backgroundColor = alert.backgroundColor;
+        p.style.backgroundColor = alert.background;
         p.style.color = alert.color;
         p.style.padding = '15px';
         p.style.margin = '10px 0';
