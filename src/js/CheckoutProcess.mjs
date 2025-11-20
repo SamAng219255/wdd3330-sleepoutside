@@ -5,9 +5,9 @@ export default class CheckoutProcess {
   }
 
   displaySubtotal() {
-    this.subtotal = this.cartItems.reduce((acc, item) => acc + item.FinalPrice, 0);
+    const subtotal = this.cartItems.reduce((acc, item) => acc + item.FinalPrice, 0);
     this.summaryElem.innerHTML = `
-      <p>Subtotal: $${this.subtotal.toFixed(2)}</p>
+      <p>Subtotal: $${subtotal.toFixed(2)}</p>
       <p>Tax: —</p>
       <p>Shipping: —</p>
       <hr>
@@ -16,11 +16,12 @@ export default class CheckoutProcess {
   }
 
   displayTotal() {
-    const tax = this.subtotal * 0.06;
+    const subtotal = this.cartItems.reduce((acc, item) => acc + item.FinalPrice, 0);
+    const tax = subtotal * 0.06;
     const shipping = 8 + 2 * this.cartItems.length;
-    const total = this.subtotal + tax + shipping;
+    const total = subtotal + tax + shipping;
     this.summaryElem.innerHTML = `
-      <p>Subtotal: $${this.subtotal.toFixed(2)}</p>
+      <p>Subtotal: $${subtotal.toFixed(2)}</p>
       <p>Tax: $${tax.toFixed(2)}</p>
       <p>Shipping: $${shipping.toFixed(2)}</p>
       <hr>

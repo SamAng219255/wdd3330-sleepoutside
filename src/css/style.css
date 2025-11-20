@@ -290,6 +290,10 @@ button {
   align-self: start;
 }
 
+.hide {
+  display: none;
+}
+
 form {
   display: block;
 }
