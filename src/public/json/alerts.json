@@ -1,0 +1,17 @@
+[
+    {
+        "message": "THis is only a test",
+        "background": "darkblue",
+        "color": "White"
+    },
+    {
+        "message": "Black Friday Sale, Get 20% off all tent this month!",
+        "background": "#dc2626",
+        "color": "White"
+    },
+    {
+        "message": "Free shipping on orders over $100",
+        "background": "#16a34a",
+        "color": "White"
+    }
+]

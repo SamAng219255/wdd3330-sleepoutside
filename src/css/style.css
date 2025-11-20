@@ -1,3 +1,5 @@
+/* src/css/style.css */
+
 :root {
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -115,6 +117,23 @@ button {
 }
 
 /* End utility classes */
+
+/* Alert List Styles */
+
+.alert-list {
+  margin: 0;
+  padding: 0;
+}
+
+.alert-list p {
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* End Alert List Styles */
 
 /* Cart icon styles */
 .cart {
