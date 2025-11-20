@@ -5,7 +5,7 @@ export default class CheckoutProcess {
   }
 
   displaySubtotal() {
-    this.subtotal = cartItems.reduce((acc, item) => acc + item.FinalPrice, 0);
+    this.subtotal = this.cartItems.reduce((acc, item) => acc + item.FinalPrice, 0);
     this.summaryElem.innerHTML = `
       <p>Subtotal: $${this.subtotal.toFixed(2)}</p>
       <p>Tax: —</p>

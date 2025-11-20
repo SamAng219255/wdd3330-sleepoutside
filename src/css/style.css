@@ -317,8 +317,10 @@ input[type=text], input[type=month], input[type=password] {
   border: 1px solid;
 }
 
-input[type=submit] {
+input[type=submit], .submit {
   display: block;
+  width: max-content;
+  text-decoration: none;
   font-size: 1.25em;
   padding: 0.25em 0.5em;
   margin: 0.25rem 0;
