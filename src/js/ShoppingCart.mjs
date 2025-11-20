@@ -27,8 +27,8 @@ export default class ShoppingCart {
     this.callbackFn = callbackFn;
   }
   renderList() {
-    renderListWithTemplate(cartItemTemplate, this.listElement, this.cartItems, 'afterbegin', true);
     this.total = this.cartItems.reduce((acc, val) => acc + val.FinalPrice, 0);
+    renderListWithTemplate(cartItemTemplate, this.listElement, this.cartItems, 'afterbegin', true);
     this.callbackFn();
   }
 }

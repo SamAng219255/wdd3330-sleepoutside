@@ -8,7 +8,7 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script src="/js/checkout.js" type="module"></script>
   </head>
@@ -18,9 +18,66 @@
       
     </header>
 
-    <main class="divider">
+    <main class="divider checkout">
       <section class="products">
         <h2>Review & Place your Order</h2>
+        <ul class="product-list">
+        </ul>
+      </section>
+      <section class="checkout-form">
+        <h2>Checkout</h2>
+        <form>
+          <label>
+            First Name
+            <input type="text" autofill="given-name" name="fname" required>
+          </label>
+          <label>
+            Last Name
+            <input type="text" autofill="family-name" name="lname" required>
+          </label>
+          <fieldset id="form-address">
+            <legend>Address</legend>
+            <label>
+              Street Address
+              <input type="text" autofill="address-line1" name="address-street-1" required>
+            </label>
+            <label>
+              City
+              <input type="text" autofill="address-level2" name="address-city" required>
+            </label>
+            <label>
+              State
+              <input type="text" autofill="address-level1" name="address-state" required>
+            </label>
+            <label>
+              Zip Code
+              <input type="text" autofill="postal-code" name="address-zip" required>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Payment Method</legend>
+            <label>
+              Credit Card Number
+              <input type="password" autofill="cc-number" name="cc-number" required>
+            </label>
+            <label>
+              Expiration Date
+              <input type="month" autofill="cc-exp" name="cc-exp" required>
+            </label>
+            <label>
+              Security Code
+              <input type="password" autofill="cc-csc" name="cc-csc" required>
+            </label>
+          </fieldset>
+          <input type="submit" value="Place Order">
+        </form>
+      </section>
+      <section class="checkout-summary">
+        <p id="cart-subtotal">Subtotal: </p>
+        <p id="cart-tax">Tax: </p>
+        <p id="cart-shipping">Shipping: –</p>
+        <hr>
+        <p id="cart-total">Total: </p>
       </section>
     </main>
 
