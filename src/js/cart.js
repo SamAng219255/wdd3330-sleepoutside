@@ -5,11 +5,22 @@ import ShoppingCart from './ShoppingCart.mjs';
 const cartItems = getLocalStorage('so-cart') || [];
 const cartElem = qs('.product-list');
 
-const cart = new ShoppingCart(cartItems, cartElem, () => document
-  .querySelectorAll('.cart-card__close')
-  .forEach((btn) =>
-    btn.addEventListener('click', () => removeFromCart(btn.dataset.id)),
-  )
+const cart = new ShoppingCart(cartItems, cartElem, () => {
+  document
+    .querySelectorAll('.cart-card__close')
+    .forEach((btn) =>
+      btn.addEventListener('click', () => removeFromCart(btn.dataset.id))
+    );
+    const cartFooter = document.getElementById('cart-footer');
+    if(cart.cartItems.length > 0) {
+      cartFooter.classList.remove('hide');
+      const totalElem = document.getElementById('cart-total');
+      totalElem.innerText = `Total: $${cart.total.toFixed(2)}`;
+    }
+    else {
+      cartFooter.classList.add('hide');
+    }
+  }
 );
 cart.renderList();
 
