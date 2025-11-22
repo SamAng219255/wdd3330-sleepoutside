@@ -8,13 +8,13 @@ export default class ProductDetails {
     this.dataSource = dataSource;
   }
   async init() {
-    document
-      .getElementById('addToCart')
-      .addEventListener('click', this.addProductToCart.bind(this));
 
     this.product = await this.dataSource.findProductById(this.productId);
 
     this.renderProductDetails();
+    document
+      .getElementById('addToCart')
+      .addEventListener('click', this.addProductToCart.bind(this));
   }
   addProductToCart() {
     const cart = getLocalStorage('so-cart') || [];
@@ -26,7 +26,7 @@ export default class ProductDetails {
     qs('title').innerText = `Sleep Outside | ${this.product.Name}`;
     qs('h3').innerText = this.product.Brand.Name;
     qs('h2').innerText = this.product.NameWithoutBrand;
-    qs('#tent-img').src = this.product.Image;
+    qs('#tent-img').src = this.product.Images.PrimaryLarge;
     qs('#tent-img').alt = this.product.Name;
     qs('.product-card__price').innerText = `$${this.product.ListPrice}`;
     qs('.product__color').innerText = this.product.Colors.ColorName;
