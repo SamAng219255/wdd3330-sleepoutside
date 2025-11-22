@@ -93,7 +93,43 @@ p {
 .logo--square > div {
   margin-top: -1.7em;
 }
+/*Call to action */
+.cta{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  
+}
+.cta h2{
+  font-family: cursive;
+  color: var(--dark-grey);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.cta p {
+    margin-bottom: 1rem;
+    color: var(--tertiary-color);
+    font-weight: 500;
+    text-align: center;
+    font-size:medium;
+}
 
+.cta button {
+    font-size: 1.4rem;
+    color: white;
+    padding: 0.7rem 5rem;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--tertiary-color);
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.cta button:hover {
+    background-color:var(--dark-grey);
+
+}
 /* utility classes */
 .highlight {
   color: var(--tertiary-color);
