@@ -46,7 +46,7 @@ export default class ProductDetails {
     qs('title').innerText = `Sleep Outside | ${this.product.Name}`;
     qs('h3').innerText = this.product.Brand.Name;
     qs('h2').innerText = this.product.NameWithoutBrand;
-    qs('#tent-img').src = this.product.Image;
+    qs('#tent-img').src = this.product.Images.PrimaryLarge;
     qs('#tent-img').alt = this.product.Name;
 
     const discount = this.calculateDiscount();
