@@ -274,6 +274,44 @@ button {
   width: 100%;
 }
 
+/* Discount styles */
+.product-detail__discount {
+  position: relative;
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.discount-badge {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.3em 0.8em;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.product-card__price {
+  font-size: 1.2em;
+}
+
+.product-card__original-price {
+  text-decoration: line-through;
+  color: var(--dark-grey);
+  opacity: 0.6;
+  font-size: 0.9em;
+  margin-right: 0.5em;
+  display: inline-block;
+}
+
+.product-card__final-price {
+  color: var(--tertiary-color);
+  font-weight: bold;
+  font-size: 1.3em;
+  display: inline-block;
+}
+
 /* Start cart list card styles */
 .cart-card {
   display: grid;
