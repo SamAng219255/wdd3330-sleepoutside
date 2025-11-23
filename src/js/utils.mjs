@@ -68,3 +68,28 @@ export async function loadHeaderFooter() {
 export function formDataToObject(formElement) {
   return Object.fromEntries(new FormData(formElement).entries());
 }
+// displays alerts
+export function alertMessage(message, scroll=true) {
+  const mainElem = document.querySelector('main')
+
+  const alertElem = document.createElement('div');
+  alertElem.classList.add('alert');
+
+  const msgElem = document.createElement('span');
+  msgElem.innerText = message;
+  alertElem.appendChild(msgElem);
+
+  const closeElem = document.createElement('button');
+  closeElem.innerText = "X";
+  closeElem.addEventListener('click', () => mainElem.removeChild(alertElem));
+  alertElem.appendChild(closeElem);
+
+  mainElem.prepend(alertElem);
+
+  if(scroll)
+    window.scrollTo(0, 0);
+}
+// removes all current alerts.
+export function removeAllAlerts() {
+  document.querySelectorAll(".alert").forEach(alert => document.querySelector("main").removeChild(alert));
+}

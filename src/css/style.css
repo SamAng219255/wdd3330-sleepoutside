@@ -99,6 +99,31 @@ p {
   color: var(--tertiary-color);
 }
 
+.alert {
+  margin: 2px 2rem;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--dark-grey);
+
+  span {
+    padding: 0.5rem;
+    display: block;
+    flex: 1 1 auto;
+  }
+
+  button {
+    min-width: 44px;
+    width: 44px;
+    min-height: 44px;
+    height: 44px;
+    background: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 button {
   padding: 0.5em 2em;
   background-color: var(--secondary-color);

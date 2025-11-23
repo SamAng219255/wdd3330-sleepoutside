@@ -1,4 +1,4 @@
-import { qs, getLocalStorage, setLocalStorage } from './utils.mjs';
+import { qs, getLocalStorage, setLocalStorage, alertMessage } from './utils.mjs';
 import setCartLabel from './cart_label.mjs';
 
 export default class ProductDetails {
@@ -21,6 +21,7 @@ export default class ProductDetails {
     cart.push(this.product);
     setLocalStorage('so-cart', cart);
     setCartLabel(cart.length);
+    alertMessage(`${this.product.Name} has been added to cart.`);
   }
   renderProductDetails() {
     qs('title').innerText = `Sleep Outside | ${this.product.Name}`;

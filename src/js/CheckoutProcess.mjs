@@ -1,4 +1,4 @@
-import { formDataToObject } from './utils.mjs';
+import { formDataToObject, setLocalStorage, alertMessage, removeAllAlerts } from './utils.mjs';
 import ExternalServices from "./ExternalServices.mjs";
 
 function packageItems(cartItems) {
@@ -53,9 +53,14 @@ export default class CheckoutProcess {
 
     try {
       console.log(await ExternalServices.checkout(formData));
+
+      setLocalStorage('so-cart', []);
+      window.location.href = 'success.html';
     }
     catch(err) {
-      console.error(err);
+      removeAllAlerts();
+      err.message.forEach(message => alertMessage(message))
+      console.log(err);
     }
   }
 }
