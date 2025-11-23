@@ -64,3 +64,7 @@ export async function loadHeaderFooter() {
   renderWithTemplate(header, headerElem, setCartLabel);
   renderWithTemplate(footer, footerElem, setCartLabel);
 }
+// reads the fields of a form into an object
+export function formDataToObject(formElement) {
+  return Object.fromEntries(new FormData(formElement).entries());
+}
