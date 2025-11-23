@@ -31,6 +31,13 @@ zipElem.addEventListener('change', () => {
   }
 });
 
+const form = document.forms['checkout'];
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  checkoutProcess.checkout();
+});
+
 function removeFromCart(id) {
   cartItems.splice(
     cartItems.findIndex((item) => item.Id == id),
